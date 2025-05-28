@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiAssistant", "AiAssistant\AiAssistant.csproj", "{2253CD82-33BE-4BF4-89A2-C5CD52F70273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssistanService", "AssistanService\AssistanService.csproj", "{15B2D5A9-6CF4-4A11-BD59-E691C40B37D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2253CD82-33BE-4BF4-89A2-C5CD52F70273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2253CD82-33BE-4BF4-89A2-C5CD52F70273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2253CD82-33BE-4BF4-89A2-C5CD52F70273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2253CD82-33BE-4BF4-89A2-C5CD52F70273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B2D5A9-6CF4-4A11-BD59-E691C40B37D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B2D5A9-6CF4-4A11-BD59-E691C40B37D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B2D5A9-6CF4-4A11-BD59-E691C40B37D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B2D5A9-6CF4-4A11-BD59-E691C40B37D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47444D7D-FAAF-4FB2-8E06-4ADAF568A4C3}
+	EndGlobalSection
+EndGlobal

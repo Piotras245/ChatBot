@@ -1,0 +1,177 @@
+[
+  {
+    "instruction": "What are the main subjects in the Information Technology program?",
+    "input": "",
+    "output": "Basic Programming, Computer Networks, IT Security, Databases"
+  },
+  {
+    "instruction": "What electives are available in the Information Technology program?",
+    "input": "",
+    "output": "Intro to AI, Web Development"
+  },
+  {
+    "instruction": "What are the entry requirements for the Information Technology program?",
+    "input": "",
+    "output": "Middle school diploma (track-specific interests may apply)"
+  },
+  {
+    "instruction": "Where is the Information Technology program located?",
+    "input": "",
+    "output": "Wronki"
+  },
+  {
+    "instruction": "What kind of extracurriculars are offered in the Information Technology program?",
+    "input": "",
+    "output": "Coding Club, Game Development Workshops"
+  },
+  {
+    "instruction": "What career paths are possible after completing the Information Technology program?",
+    "input": "",
+    "output": "Junior IT Technician, Support Specialist, Web Assistant"
+  },
+  {
+    "instruction": "What do students think about the Information Technology program?",
+    "input": "",
+    "output": "The hands-on computer labs are very useful. We get to try real programming projects."
+  },
+  {
+    "instruction": "What are the main subjects in the Automotive Mechanics program?",
+    "input": "",
+    "output": "Engine Systems, Auto Diagnostics, Vehicle Electronics, Workshop Practice"
+  },
+  {
+    "instruction": "What electives are available in the Automotive Mechanics program?",
+    "input": "",
+    "output": "Hybrid Vehicle Systems, Car Tuning Basics"
+  },
+  {
+    "instruction": "What are the entry requirements for the Automotive Mechanics program?",
+    "input": "",
+    "output": "Middle school diploma"
+  },
+  {
+    "instruction": "Where is the Automotive Mechanics program located?",
+    "input": "",
+    "output": "Poznań"
+  },
+  {
+    "instruction": "What kind of extracurriculars are offered in the Automotive Mechanics program?",
+    "input": "",
+    "output": "Auto Club, Motor Show Visits"
+  },
+  {
+    "instruction": "What career paths are possible after completing the Automotive Mechanics program?",
+    "input": "",
+    "output": "Auto Mechanic, Service Technician, Diagnostics Assistant"
+  },
+  {
+    "instruction": "What do students think about the Automotive Mechanics program?",
+    "input": "",
+    "output": "Great access to a fully equipped workshop. Teachers are experienced mechanics themselves."
+  },
+  {
+    "instruction": "What are the main subjects in the Hospitality and Tourism program?",
+    "input": "",
+    "output": "Tourism Geography, Customer Service, Event Planning, Hotel Operations"
+  },
+  {
+    "instruction": "What electives are available in the Hospitality and Tourism program?",
+    "input": "",
+    "output": "Wine and Cuisine, Eco-tourism"
+  },
+  {
+    "instruction": "What are the entry requirements for the Hospitality and Tourism program?",
+    "input": "",
+    "output": "Middle school diploma"
+  },
+  {
+    "instruction": "Where is the Hospitality and Tourism program located?",
+    "input": "",
+    "output": "Szczecin"
+  },
+  {
+    "instruction": "What kind of extracurriculars are offered in the Hospitality and Tourism program?",
+    "input": "",
+    "output": "Travel Club, Cultural Exchange Programs"
+  },
+  {
+    "instruction": "What career paths are possible after completing the Hospitality and Tourism program?",
+    "input": "",
+    "output": "Travel Agent, Hotel Receptionist, Tour Coordinator"
+  },
+  {
+    "instruction": "What do students think about the Hospitality and Tourism program?",
+    "input": "",
+    "output": "We learn how to interact professionally with clients. The international exchange was a highlight!"
+  },
+  {
+    "instruction": "What are the main subjects in the Electrical Engineering program?",
+    "input": "",
+    "output": "Circuit Theory, Electronics, Power Systems, Electrical Machines"
+  },
+  {
+    "instruction": "What electives are available in the Electrical Engineering program?",
+    "input": "",
+    "output": "Renewable Energy, Smart Home Systems"
+  },
+  {
+    "instruction": "What are the entry requirements for the Electrical Engineering program?",
+    "input": "",
+    "output": "Middle school diploma (strong math skills preferred)"
+  },
+  {
+    "instruction": "Where is the Electrical Engineering program located?",
+    "input": "",
+    "output": "Gdańsk"
+  },
+  {
+    "instruction": "What kind of extracurriculars are offered in the Electrical Engineering program?",
+    "input": "",
+    "output": "Robotics Club, Energy Innovation Lab"
+  },
+  {
+    "instruction": "What career paths are possible after completing the Electrical Engineering program?",
+    "input": "",
+    "output": "Electrician, Maintenance Technician, Junior Engineer"
+  },
+  {
+    "instruction": "What do students think about the Electrical Engineering program?",
+    "input": "",
+    "output": "The robotics projects really helped me learn. Theory is backed up by real-world applications."
+  },
+  {
+    "instruction": "What are the main subjects in the Culinary Arts program?",
+    "input": "",
+    "output": "Food Preparation, Nutrition Basics, Culinary Techniques, Food Safety"
+  },
+  {
+    "instruction": "What electives are available in the Culinary Arts program?",
+    "input": "",
+    "output": "Pastry Arts, World Cuisine"
+  },
+  {
+    "instruction": "What are the entry requirements for the Culinary Arts program?",
+    "input": "",
+    "output": "Middle school diploma and passion for cooking"
+  },
+  {
+    "instruction": "Where is the Culinary Arts program located?",
+    "input": "",
+    "output": "Łódź"
+  },
+  {
+    "instruction": "What kind of extracurriculars are offered in the Culinary Arts program?",
+    "input": "",
+    "output": "Cooking Competitions, Restaurant Internships"
+  },
+  {
+    "instruction": "What career paths are possible after completing the Culinary Arts program?",
+    "input": "",
+    "output": "Line Cook, Pastry Assistant, Catering Staff"
+  },
+  {
+    "instruction": "What do students think about the Culinary Arts program?",
+    "input": "",
+    "output": "We get to cook every day – it's fun and challenging. The pastry module is everyone's favorite!"
+  }
+]
