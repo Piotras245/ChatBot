@@ -39,6 +39,7 @@
 
       </div>
       <div class="col-span-5 chat-container w-[80%] h-full ">
+
         <DxChat :data-source="messages" :class="{ 'dx-chat-disabled': isDisabled }" :height="600"
           :reload-on-change="false" :show-avatar="false" :show-day-headers="false" :user="user" ref="assistantChat"
           message-template="message" v-model:typing-users="typingUsers" v-model:alerts="alerts"
@@ -49,15 +50,23 @@
                 {{ REGENERATION_TEXT }}
               </span>
               <template v-else>
-                <div v-html="convertToHtml(data.message.text)" class="dx-chat-messagebubble-text"></div>
+                <div class="justify-between flex ">
+                  <div v-html="convertToHtml(data.message.text)" class="dx-chat-messagebubble-text"></div>
+                  <DxLoadIndicator :visible="loading" class="button-indicator" :height="20" :width="20" />
+                </div>
+
                 <div class="dx-bubble-button-container">
                   <DxButton :icon="copyButtonIcon" styling-mode="text" hint="Copy"
                     @click="onCopyButtonClick(data.message)" />
+
                 </div>
+
+
               </template>
             </div>
           </template>
         </DxChat>
+
       </div>
     </div>
   </div>
@@ -70,6 +79,7 @@ import DxChat, { type DxChatTypes } from 'devextreme-vue/chat';
 import DxButton from 'devextreme-vue/button';
 import { loadMessages } from 'devextreme/localization';
 import type { chatFunct, ChatMessage } from "@/types/AssistantResponse";
+import { DxLoadIndicator } from 'devextreme-vue/load-indicator';
 import {
   dictionary,
   user,
@@ -80,12 +90,18 @@ import {
 import type ChatMessageDto from '@/types/ChatMessageDto.ts';
 import { AuthorRole } from '@/types/AuthorRole.ts';
 
+
+// import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+
 const loading = ref(false);
+const apiUrl = import.meta.env.VITE_API_URL;
+
 
 const typingUsers = ref([]);
 const alerts = ref([]);
 const isDisabled = ref(false);
 const copyButtonIcon = ref('copy');
+
 
 function convertToHtml(text: string): string {
   return text.replace(/\n/g, '<br>');
@@ -109,7 +125,7 @@ async function getAIResponse(promptText: string): Promise<string> {
 
   try {
     const response = await fetch(
-      `http://localhost:5132/Query?input=${encodeURIComponent(promptText)}&chatId=${currentChatId.value}&currentDateTime=${new Date().toLocaleTimeString()}`
+      `${apiUrl}Query?input=${encodeURIComponent(promptText)}&chatId=${currentChatId.value}&currentDateTime=${new Date().toLocaleTimeString()}`
     );
 
     if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
@@ -189,7 +205,7 @@ const chatList = ref<{ id: number; name: string }[]>([]);
 
 async function createNewChat() {
   try {
-    const response = await fetch('http://localhost:5132/Query/CreateChat', {
+    const response = await fetch(`${apiUrl}Query/CreateChat`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -215,9 +231,9 @@ async function createNewChat() {
 
 async function fetchChats() {
   try {
-    const response = await fetch('http://localhost:5132/Query/AllChats');
+    const response = await fetch(`${apiUrl}Query/AllChats`);
 
-    console.log(response)
+    console.log(apiUrl);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch chats: ${response.status}`);
@@ -245,42 +261,45 @@ async function fetchChats() {
 }
 
 async function loadMessagesForChat(chatId: number) {
+  if (loading.value) {
+    console.warn('AI is responding, message loading is temporarily disabled.');
+    return;
+  }
+
   currentChatId.value = chatId;
   localStorage.setItem('lastChatId', chatId.toString());
 
   try {
-    const response = await fetch(`http://localhost:5132/Query/MessagesByChat/${chatId}`);
+    const response = await fetch(`${apiUrl}Query/MessagesByChat/${chatId}`);
     if (!response.ok) throw new Error(`Failed to load messages: ${response.status}`);
 
     const messagesTest = await response.json();
 
     dataSource.reload();
 
-    messages.value = []
+    messages.value = [];
     messagesTest.forEach((msg: ChatMessageDto) => {
-      console.log(msg.date);
-      messages.value.push(
-        {
-          id: msg.id,
-          timestamp: msg.date,
-          author: msg.role === AuthorRole.user ? user : assistant,
-          text: msg.text,
-        }
-
-      )
+      messages.value.push({
+        id: msg.id,
+        timestamp: msg.date,
+        author: msg.role === AuthorRole.user ? user : assistant,
+        text: msg.text,
+      });
     });
-    assistantChat.value?.instance?.getDataSource().reload()
+
+    assistantChat.value?.instance?.getDataSource().reload();
 
   } catch (error) {
     console.error("Error loading messages:", error);
   }
 }
 
+
 async function DeleteChat(chatId: number) {
   const confirmed = window.confirm("Are you sure you want to delete this chat?");
   if (!confirmed) return;
   try {
-    const response = await fetch(`http://localhost:5132/Query/DeleteChat/${chatId}`, {
+    const response = await fetch(`${apiUrl}Query/DeleteChat/${chatId}`, {
       method: 'DELETE'
     });
 
@@ -319,7 +338,7 @@ async function submitRenameChat(chatId: number) {
   if (!newChatName.value.trim()) return;
 
   try {
-    const response = await fetch(`http://localhost:5132/Query/RenameChat/${chatId}`, {
+    const response = await fetch(`${apiUrl}Query/RenameChat/${chatId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ newName: newChatName.value.trim() }),

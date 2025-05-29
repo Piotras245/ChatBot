@@ -85,7 +85,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .dx-bubble-button-container {
   display: none;
 }
@@ -95,8 +94,20 @@ body {
   color: var(--dx-color-icon);
 }
 
-.dx-chat-messagegroup-alignment-start:last-child .dx-chat-messagebubble:last-child .dx-bubble-button-container {
+.dx-chat-messagegroup-alignment-start:last-child
+  .dx-chat-messagebubble:last-child
+  .dx-bubble-button-container {
   display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.button-indicator {
+  display: none !important;
+}
+
+.dx-chat-messagegroup-alignment-end:last-child .button-indicator {
+  display: flex !important;
   gap: 4px;
   margin-top: 8px;
 }
