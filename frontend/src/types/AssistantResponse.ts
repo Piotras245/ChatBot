@@ -21,5 +21,4 @@ export interface chatFunct {
   timestamp: string
   loading: boolean
   message: string
-  _event?: Event
 }
